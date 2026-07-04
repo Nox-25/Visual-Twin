@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisualTwin - Defect Detection</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>VisualTwin: Digital Twin Inspection System</h1>
+        <div id="status-indicator">
+            <span class="dot" id="state-dot"></span>
+            <span id="state-text">Initializing...</span>
+            <span id="fps-counter" style="margin-left: 20px; font-size: 0.8em; color: #aaa;">FPS: 0.0</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Main Viewer Column -->
+        <div class="column main-col">
+            <div class="panel">
+                <h2>Live Feed (Sensing Layer)</h2>
+                <div class="video-container">
+                    <img id="video-feed" src="/video_feed" alt="Live Camera Feed">
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>Spatial Defect Heatmap (Inference Layer)</h2>
+                <div class="video-container">
+                    <img id="heatmap-feed" src="/heatmap_feed" alt="Attention Rollout Heatmap">
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="column side-col">
+            <!-- Inference Predictions -->
+            <div class="panel">
+                <h2>Real-Time Classification</h2>
+                <ul class="prediction-list" id="prediction-list">
+                    <li>Loading...</li>
+                </ul>
+            </div>
+
+            <!-- Knowledge Layer (Ontology) -->
+            <div class="panel">
+                <h2>Living Defect Ontology (Knowledge Layer)</h2>
+                <ul class="ontology-list" id="ontology-list">
+                    <li>Loading...</li>
+                </ul>
+                <div class="ontology-controls">
+                    <input type="text" id="new-class-input" placeholder="e.g. 'a photo of a surface with burn marks'">
+                    <button onclick="addOntologyClass()">Add</button>
+                </div>
+            </div>
+
+            <!-- Anomaly Log -->
+            <div class="panel">
+                <h2>Temporal Anomaly Log</h2>
+                <ul class="anomaly-list" id="anomaly-list">
+                    <li>No recent anomalies.</li>
+                </ul>
+                <button onclick="triggerSnapshot()" style="margin-top: 10px; width: 100%;">Save Digital Twin Snapshot</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

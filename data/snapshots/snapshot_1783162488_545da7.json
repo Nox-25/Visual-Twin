@@ -1,0 +1,35 @@
+{
+    "station_id": "VisualTwin_Station_1",
+    "timestamp": "2026-07-04T10:54:48.854600",
+    "current_state": "defect_detected",
+    "active_ontology": [
+        "a photo of a normal, defect-free surface",
+        "a photo of a surface with a scratch",
+        "a photo of a surface with a crack",
+        "a photo of a surface with corrosion or rust"
+    ],
+    "anomaly_log": [
+        {
+            "timestamp": "2026-07-04T10:54:48.854590",
+            "detected_class": "crack",
+            "confidence_score": 0.95,
+            "frame_ref": "frame_123.jpg",
+            "explainability_method_used": "Class-Specific Attention Rollout"
+        }
+    ],
+    "state_transition_history": [
+        {
+            "timestamp": "2026-07-04T10:54:48.854568",
+            "state": "idle"
+        },
+        {
+            "timestamp": "2026-07-04T10:54:48.854597",
+            "state": "defect_detected"
+        }
+    ],
+    "session_metadata": {
+        "model_version": "openai/clip-vit-base-patch32",
+        "explainability_method": "Class-Specific Attention Rollout",
+        "session_start_time": "2026-07-04T10:54:48.854585"
+    }
+}
