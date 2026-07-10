@@ -1,0 +1,9 @@
+torch
+open_clip_torch
+opencv-python
+flask
+numpy
+scipy
+scikit-learn
+matplotlib
+pillow
